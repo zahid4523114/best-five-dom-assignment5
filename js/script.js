@@ -1,56 +1,48 @@
-//checking node list
-// function playerPrice() {
-//   let listContainer = document.querySelectorAll("li");
-//   let nodeLength = listContainer.length;
-//   return nodeLength;
-// }
+let listContainer = document.querySelectorAll("li");
+let nodeLength = listContainer.length;
+if (nodeLength > 5) {
+  alert("you can not add  more player");
+}
+
 //player-1
 document.getElementById("player-btn-1").addEventListener("click", function () {
   setListElementById("all-list-element", "Neymar Jr");
+  buttonDisabled("player-btn-1");
 });
 //player-2
 document.getElementById("player-btn-2").addEventListener("click", function () {
   setListElementById("all-list-element", "Kylian Mbappé");
+  buttonDisabled("player-btn-2");
 });
 //player-3
 document.getElementById("player-btn-3").addEventListener("click", function () {
   setListElementById("all-list-element", "Lionel Messi");
+  buttonDisabled("player-btn-3");
 });
 //player-4
 document.getElementById("player-btn-4").addEventListener("click", function () {
   setListElementById("all-list-element", "Sergio Ramos");
+  buttonDisabled("player-btn-4");
 });
 //player-5
 document.getElementById("player-btn-5").addEventListener("click", function () {
   setListElementById("all-list-element", "Renato Sanches");
+  buttonDisabled("player-btn-5");
 });
 //player-6
 document.getElementById("player-btn-6").addEventListener("click", function () {
   setListElementById("all-list-element", "Vítor Machado");
+  buttonDisabled("player-btn-6");
 });
+//
 
 //player pricing calculation
 document.getElementById("calculate").addEventListener("click", function () {
-  let listContainer = document.querySelectorAll("li");
-  let nodeLength = listContainer.length;
-  let perPlayerPrice = document.getElementById("per-player-price");
-  let getPrice = perPlayerPrice.value;
-  let playerExpensesPrice = nodeLength * getPrice;
-  let playerExpenses = document.getElementById("player-expenses");
-  playerExpenses.innerText = playerExpensesPrice;
+  perPlayerPriceCalculation();
 });
 //calculate total
 document
   .getElementById("calculate-total")
   .addEventListener("click", function () {
-    let getManagerCost = document.getElementById("manager-price");
-    let managerCostValue = Number(getManagerCost.value);
-    let getCoachCost = document.getElementById("coach-price");
-    let CoachCostValue = Number(getCoachCost.value);
-    let playerExpenses = document.getElementById("player-expenses");
-    let expensesInnerText = Number(playerExpenses.innerText);
-    let totalCost = managerCostValue + CoachCostValue;
-    let setTotal = expensesInnerText + totalCost;
-    let totalAmount = document.getElementById("total-amount");
-    totalAmount.innerText = setTotal;
+    calculateTotalAmount();
   });

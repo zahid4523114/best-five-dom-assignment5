@@ -4,3 +4,31 @@ function setListElementById(element, name) {
   createList.innerText = name;
   getElement.appendChild(createList);
 }
+//disabled button
+function buttonDisabled(disabledId) {
+  const button = document.getElementById(disabledId);
+  button.disabled = true;
+}
+//per player price calculation
+function perPlayerPriceCalculation() {
+  let listContainer = document.querySelectorAll("li");
+  let nodeLength = listContainer.length;
+  let perPlayerPrice = document.getElementById("per-player-price");
+  let getPrice = perPlayerPrice.value;
+  let playerExpensesPrice = nodeLength * getPrice;
+  let playerExpenses = document.getElementById("player-expenses");
+  playerExpenses.innerText = playerExpensesPrice;
+}
+//calculate total amount
+function calculateTotalAmount() {
+  let getManagerCost = document.getElementById("manager-price");
+  let managerCostValue = Number(getManagerCost.value);
+  let getCoachCost = document.getElementById("coach-price");
+  let CoachCostValue = Number(getCoachCost.value);
+  let playerExpenses = document.getElementById("player-expenses");
+  let expensesInnerText = Number(playerExpenses.innerText);
+  let totalCost = managerCostValue + CoachCostValue;
+  let setTotal = expensesInnerText + totalCost;
+  let totalAmount = document.getElementById("total-amount");
+  totalAmount.innerText = setTotal;
+}
