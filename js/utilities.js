@@ -9,6 +9,8 @@ function setListElementById(element, name) {
   if (nodeLength > 5) {
     alert("You can not add more than 5 players");
     getElement.removeChild(createList);
+    const button = document.getElementById(disabledId);
+    button.disabled = false;
   }
 }
 //disabled button
