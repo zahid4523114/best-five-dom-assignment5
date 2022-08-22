@@ -1,9 +1,3 @@
-let listContainer = document.querySelectorAll("li");
-let nodeLength = listContainer.length;
-if (nodeLength > 5) {
-  alert("you can not add  more player");
-}
-
 //player-1
 document.getElementById("player-btn-1").addEventListener("click", function () {
   setListElementById("all-list-element", "Neymar Jr");
@@ -34,8 +28,6 @@ document.getElementById("player-btn-6").addEventListener("click", function () {
   setListElementById("all-list-element", "Vítor Machado");
   buttonDisabled("player-btn-6");
 });
-//
-
 //player pricing calculation
 document.getElementById("calculate").addEventListener("click", function () {
   perPlayerPriceCalculation();
